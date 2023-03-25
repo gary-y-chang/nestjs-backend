@@ -1,0 +1,143 @@
+{
+
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:241954713582:task-definition/dev-affinity-backend:2",
+    "containerDefinitions": [
+        {
+            "name": "container",
+            "image": "241954713582.dkr.ecr.ap-northeast-1.amazonaws.com/dev-affinity-cdk/affinity-backend:latest",
+            "cpu": 0,
+            "memory": 512,
+            "links": [],
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "entryPoint": [],
+            "command": [],
+            "environment": [
+                {
+                    "name": "DATABASE_TYPE",
+                    "value": "postgres"
+                },
+                {
+                    "name": "DATABASE_NAME",
+                    "value": "affinity"
+                },
+                {
+                    "name": "PORT",
+                    "value": "3000"
+                },
+                {
+                    "name": "DATABASE_PORT",
+                    "value": "5432"
+                },
+                {
+                    "name": "COGNITO_REGION",
+                    "value": "ap-northeast-1"
+                },
+                {
+                    "name": "CURRENT_ENV",
+                    "value": "development"
+                },
+                {
+                    "name": "COGNITO_USER_POOL_ID",
+                    "value": "ap-northeast-1_YpEUB1I8G"
+                },
+                {
+                    "name": "COGNITO_CLIENT_ID",
+                    "value": "1sn6sgjpe9s1bj8b8m65tavn1l"
+                },
+                {
+                    "name": "DATABASE_USER",
+                    "value": "affinity"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [
+                {
+                    "name": "DATABASE_HOST",
+                    "valueFrom": "arn:aws:secretsmanager:ap-northeast-1:241954713582:secret:devaffinitybackendrdsstackd-oHgA4Zj0Ufa5-FZ57Lw:host::"
+                },
+                {
+                    "name": "DATABASE_PASSWORD",
+                    "valueFrom": "arn:aws:secretsmanager:ap-northeast-1:241954713582:secret:devaffinitybackendrdsstackd-oHgA4Zj0Ufa5-FZ57Lw:password::"
+                }
+            ],
+            "dnsServers": [],
+            "dnsSearchDomains": [],
+            "extraHosts": [],
+            "dockerSecurityOptions": [],
+            "dockerLabels": {},
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "dev-affinity-backend-stack-devaffinitybackendtaskdefinitioncontainerLogGroup0D5C1F8B-GFr05tUbUhVk",
+                    "awslogs-region": "ap-northeast-1",
+                    "awslogs-stream-prefix": "dev-affinity-backend"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "dev-affinity-backend",
+    "taskRoleArn": "arn:aws:iam::241954713582:role/dev-affinity-backend-stac-devaffinitybackendtaskde-KQDOAGCSQ9Q1",
+    "executionRoleArn": "arn:aws:iam::241954713582:role/dev-affinity-backend-role",
+    "networkMode": "awsvpc",
+    "revision": 2,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "ecs.capability.secrets.asm.environment-variables"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512",
+    "registeredAt": "2022-06-09T02:55:53.398000+05:30",
+    "registeredBy": "arn:aws:sts::241954713582:assumed-role/cdk-hnb659fds-cfn-exec-role-241954713582-ap-northeast-1/AWSCloudFormation"
+}
+
